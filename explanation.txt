@@ -1,0 +1,58 @@
+﻿In the process of getting the best possible accuracy, I tried several features with respect to the given data.  Below is a list of features and brief explanation on each.
+
+1
+	Number of tokens
+	A count on the number of tokens in each line after tokenizing with TreebankWordTokenizer
+	Used.
+2
+	Unigrams(TreebankWordTokenizer)
+	Unigrams in each sentence along with the count of appearance in each sentence.
+	Used.
+3
+	Stemming(morphy)
+	Stem the root word using morphy stem. Use the word itself if no stem is present. Both are to be used in lower case.
+	Used.
+4
+	Synonym(synset)
+	For every token get the synonym using synset. Use the first synonym in the list as the unigram key. If absent, use the word itself. 
+	Used.
+5
+	Syllables
+	Wrote a separate function to count the number of syllables in each token. Total syllable count in the line is added as a feature.
+	Used.
+6
+	Vowels
+	Number of  vowels in each token is calculated and a feature with total vowel count in the line is added.
+	Used.
+7
+	ngrams
+	Bigrams and trigrams for each line was implemented. However, this resulted in decrease of accuracy after multiple trials and attempts. 
+	Not used. 
+8
+	Word with maximum length in the sentence
+	Find the word with the maximum length  in the sentence
+	Used
+9
+	Word with minimum length in the sentence
+	Find the word with minimum length  in the sentence
+	Used
+10
+	Word length range
+	Difference between max and the min length in the sentence
+	Used
+11
+	Check if number
+	Check if the sentence has digit as a token
+	Used
+12
+	Character ngrams
+	Ngrams for every word on characters. Decreased accuracy both on dev and blind data set
+	Not Used
+13
+	Text normalization
+	Removed all punctuation and stop words before tokenizing
+	Used
+14
+	Unique words in the stem
+	Count of unique words in the sentence
+	Used
